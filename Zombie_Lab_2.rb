@@ -9,6 +9,12 @@ class Tweet < ActiveRecord::Base
 	validates :status, :presence => true, :length => { :minimum => 3}
 end
 
+# Validate uniqueness of a Zombie's name
+validates_uniqueness_of :name
+
+# Validate both uniqueness and the presence of the Zombie's name on a single line using the new validation syntax
+validates :name, :presence => true, :uniqueness => true
+
 # MODELS - Validations - Other Validations
 :presence => true
 :uniqueness => true
