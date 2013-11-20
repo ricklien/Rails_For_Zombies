@@ -45,3 +45,4 @@ ash = Zombie.find(1)
 ash.tweets.count
 
 # [<Tweet id: 1, status: "Where can I get a good bite to eat?", zombie_ie: 1>. <Tweet id: 4, status: "OMG, my fingers turned green. #FML", zombie_id: 1>]
+ash.tweets
