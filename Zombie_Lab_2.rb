@@ -1,5 +1,9 @@
 # *** RAILS FOR ZOMBIES - Zombie Lab 2 ***
 
+# MODELS
+class Tweet < ActiveRecord::Base
+end
+
 # MODELS - Validations
 class Tweet < ActiveRecord::Base
 	validates :status, :presence => true, :length => { :minimum => 3}
