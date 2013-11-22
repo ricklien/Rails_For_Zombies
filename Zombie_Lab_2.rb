@@ -1,4 +1,4 @@
-# *** RAILS FOR ZOMBIES - Zombie Lab 2 ***
+ # *** RAILS FOR ZOMBIES - Zombie Lab 2 ***
 
 # MODELS
 class Tweet < ActiveRecord::Base
@@ -56,3 +56,35 @@ ash.tweets.count
 
 # [<Tweet id: 1, status: "Where can I get a good bite to eat?", zombie_ie: 1>. <Tweet id: 4, status: "OMG, my fingers turned green. #FML", zombie_id: 1>]
 ash.tweets
+
+
+# Exercise
+	# Resource Route
+	# Question - Create a resources route for zombies.
+	TwitterForZombies::Application.routes.draw do
+  		resources :zombies
+	end
+
+	# Route Matching
+	# Question - Create a custom route so that '/undead' will go to the undead action on the ZombiesController.
+	TwitterForZombies::Application.routes.draw do
+  		match 'undead' => 'zombies#undead'
+	end
+
+	# Route Redirecting
+	# Question - Create a redirect for '/undead' to '/zombies'
+	TwitterForZombies::Application.routes.draw do
+  		match '/undead' => redirect('/zombies')
+	end
+
+	# Root Route
+	# Question - Create a root route to the ZombiesController index action.
+	TwitterForZombies::Application.routes.draw do
+  		root :to => 'zombies#index'
+	end
+
+	# Named Route
+	# Question - Create a named route. It should generate a path like '/zombies/:name' where :name is a parameter, and points to the index action in ZombiesController. Name the route 'graveyard'
+	TwitterForZombies::Application.routes.draw do
+  		match '/zombies/:name' => 'zombies#index', :as => 'graveyard'
+	end
