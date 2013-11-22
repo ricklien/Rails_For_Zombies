@@ -74,3 +74,33 @@ Tweet.find(2).destroy
 
 # CRUD - Delete - Delete all
 Tweet.destroy_all
+
+# EXERCISE
+
+	# Find 1
+	# Question - Try to find a Zombie where the ID is 1
+	Zombie.find(1)
+
+
+	# Create
+	# Question - Create a new Zombie.
+	Zombie.create
+
+	# Find II
+	# Question - Find the last Zombie in the database, but don't use IDs
+	Zombie.last
+
+	# Query 
+	# Question - Find all Zombies ordered by their names.
+	Zombie.all
+
+	# Update
+	# Question - Update Zombie 3's graveyard to 'Benny Hills Memorial'
+	z = Zombie.find(3)
+	z.graveyard = "Benny Hills Memorial"
+	z.save
+	
+	# destroy
+	# Question - Destroy the Zombie with an ID of 3.
+	Zombie.fin­d(3).destr­oy 
+
